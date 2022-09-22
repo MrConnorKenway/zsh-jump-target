@@ -40,6 +40,11 @@
             return 0
         fi
 
+        if (( target_idx == 2 )); then
+            (( CURSOR = target_to_buffer_idx[${ZSH_JUMP_TARGET_CHOICES[1]}] - 1 ))
+            return 0
+        fi
+
         zle -R "Target:"
         read -k target_choice
 
